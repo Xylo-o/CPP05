@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   GradeTooLowException.cpp                           :+:      :+:    :+:   */
+/*   GradeTooHighException.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/05 15:59:09 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/08 07:43:43 by kali             ###   ########.fr       */
+/*   Created: 2024/12/05 15:59:06 by adprzyby          #+#    #+#             */
+/*   Updated: 2024/12/07 09:59:06 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "GradeTooLowException.hpp"
-#include "Colors.hpp"
+#pragma once
+#include <iostream>
+#include <string>
+#include <exception>
 
-const char* GradeTooLowException::what() const throw() {
-    static std::string msg = std::string(RED) + "Grade is too low!" + NC;
-    return msg.c_str();
-}
+class GradeTooHighException : public std::exception {
+    public:
+        const char* what() const throw();
+};

@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 19:45:36 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/08 07:30:06 by kali             ###   ########.fr       */
+/*   Updated: 2024/12/08 09:28:34 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Bureaucrat {
 		void incrementGrade();
 		void decrementGrade();
 		friend std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);
+		void signForm(Form& form);
 	private:
 		const std::string name;		
 		int grade;	

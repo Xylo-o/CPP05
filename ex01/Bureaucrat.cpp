@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 19:41:47 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/08 07:38:50 by kali             ###   ########.fr       */
+/*   Updated: 2024/12/08 09:23:08 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "GradeTooHighException.hpp"
 #include "GradeTooLowException.hpp"
 #include "Colors.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : name(name), grade(grade){
 	if (grade <= 0) {
@@ -68,4 +69,12 @@ void Bureaucrat::decrementGrade() {
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat) {
     os << bureaucrat.getName() << BLUE << ", bureaucrat grade " << NC << bureaucrat.getGrade();
     return os;
+}
+
+void Bureaucrat::signForm(Form& form) {
+    if (form.getIsSigned()) {
+        std::cout << name << RED << " couldn't sign " << NC << form.getName() << RED << " because " << NC << std::endl;
+    } else if (!form.getIsSigned()) {
+        std::cout << name << GREEN << " signed " << NC << form.getName() << std::endl;
+    }
 }
