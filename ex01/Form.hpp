@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 07:49:55 by kali              #+#    #+#             */
-/*   Updated: 2024/12/08 08:23:59 by kali             ###   ########.fr       */
+/*   Updated: 2024/12/09 18:03:34 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include "Bureaucrat.cpp"
 #include <string>
 #include <iostream>
+#include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form {
   public:
@@ -22,7 +24,7 @@ class Form {
     Form& operator=(const Form& other);
     ~Form();
 	const std::string& getName() const;
-    bool getIsSigned();
+    bool getIsSigned() const;
 	int getSignGrade() const;
 	int getExecGrade() const;
 	friend std::ostream& operator<<(std::ostream& os, const Form& form);

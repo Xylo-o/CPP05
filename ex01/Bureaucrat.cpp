@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 19:41:47 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/08 09:23:08 by kali             ###   ########.fr       */
+/*   Updated: 2024/12/09 20:48:23 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,19 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade) : name(name), grade(g
 	else if (grade > 150) {
 		throw GradeTooLowException();
 	}
-	std::cout << GREEN << "Bureaucrat " << NC << name << GREEN << " has been emloyed with a grade: " << NC << grade << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& other) : name(other.name), grade(other.grade){
-	std::cout << YELLOW << "Bureaucrat " << NC << name << YELLOW << " has multiplied" << NC << std::endl;
-}
+Bureaucrat::Bureaucrat(const Bureaucrat& other) : name(other.name), grade(other.grade) {}
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
 	if (this != &other) {
 		grade = other.grade;
 	}
-	std::cout << BLUE << "Bureaucrat " << NC << name << BLUE << " has been assigned" << NC << std::endl;
 	return *this;
 }
 
 Bureaucrat::~Bureaucrat() {
-	std::cout << RED << "Bureaucrat " << NC << name << RED << " has been sent packing!" << NC << std::endl;
+	std::cout << RED << "The bureaucrat " << NC << name << RED << " has been fired!" << NC << std::endl;
 }
 
 const std::string& Bureaucrat::getName() const {
@@ -72,9 +68,11 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat) {
 }
 
 void Bureaucrat::signForm(Form& form) {
-    if (form.getIsSigned()) {
-        std::cout << name << RED << " couldn't sign " << NC << form.getName() << RED << " because " << NC << std::endl;
-    } else if (!form.getIsSigned()) {
-        std::cout << name << GREEN << " signed " << NC << form.getName() << std::endl;
+	try {
+		form.beSigned(*this);
+		std::cout << name << GREEN << " signed " << NC << form.getName() << std::endl;
+	}
+    catch (const std::exception& e) {
+        std::cout << name << RED << " couldn't sign " << NC << form.getName() << RED << " because " << NC << e.what() << std::endl;
     }
 }

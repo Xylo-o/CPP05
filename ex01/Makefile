@@ -1,4 +1,4 @@
-NAME := bureaucrat
+NAME := form
 CC := c++
 CCFLAGS := -Werror -Wextra -Wall -std=c++98
 
@@ -6,6 +6,7 @@ SRC := main.cpp \
 	Bureaucrat.cpp \
 	GradeTooLowException.cpp \
 	GradeTooHighException.cpp \
+	Form.cpp \
 
 OBJ := $(SRC:.cpp=.o)
 
