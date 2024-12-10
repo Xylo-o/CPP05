@@ -6,7 +6,7 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:57:42 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/10 19:56:11 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/12/10 20:07:48 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,9 @@
 
 AForm::AForm(const std::string& name, bool isSigned, int signGrade, int execGrade) : name(name), isSigned(false), signGrade(signGrade), execGrade(execGrade) {
     if (signGrade <= 0 || execGrade <= 0) {
-		// throw GradeTooHighException();
 		throw std::runtime_error("Grade too high!");
 	}
 	else if (signGrade > 150 || execGrade <= 0) {
-		// throw GradeTooLowException();
 		throw std::runtime_error("Grade too low!");
 	}
 	std::cout << GREEN << "New form " << NC << name << GREEN << " created. The sign grade is: " 
@@ -66,7 +64,6 @@ const std::string& AForm::getName() const {
 
 void AForm::beSigned(const Bureaucrat& bureaucrat) {
     if (bureaucrat.getGrade() > signGrade) {
-        // throw GradeTooLowException();
 		throw std::runtime_error("Grade too low!");
     } else {
         isSigned = true;

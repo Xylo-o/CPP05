@@ -6,7 +6,7 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:55:22 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/10 18:25:38 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/12/10 20:09:03 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,39 +34,36 @@ int main() {
         alice.signForm(robotomy);
         alice.signForm(presi);
 
-        bob.signForm(shrub); // Should fail due to low grade
-        bob.signForm(robotomy); // Should fail due to low grade
-        bob.signForm(presi); // Should fail due to low grade
+        bob.signForm(shrub);
+        bob.signForm(robotomy);
+        bob.signForm(presi);
 
         std::cout << shrub << std::endl;
         std::cout << robotomy << std::endl;
         std::cout << presi << std::endl;
 
-        // Test 2: Executing forms
         alice.executeForm(shrub);
         alice.executeForm(robotomy);
         alice.executeForm(presi);
 
-        bob.executeForm(shrub); // Should fail due to low grade
-        bob.executeForm(robotomy); // Should fail due to low grade
-        bob.executeForm(presi); // Should fail due to low grade
+        bob.executeForm(shrub);
+        bob.executeForm(robotomy);
+        bob.executeForm(presi);
 
-        // Test 3: Handling exceptions for invalid grades
         try {
-            Bureaucrat invalidHigh("InvalidHigh", 0); // Should throw exception
+            Bureaucrat invalidHigh("InvalidHigh", 0);
         } catch (const std::exception& e) {
             std::cerr << "Exception caught: " << e.what() << std::endl;
         }
 
         try {
-            Bureaucrat invalidLow("InvalidLow", 200); // Should throw exception
+            Bureaucrat invalidLow("InvalidLow", 200);
         } catch (const std::exception& e) {
             std::cerr << "Exception caught: " << e.what() << std::endl;
         }
 
-        // Test 4: Handling exceptions for unsigned forms
         ShrubberyCreationForm unsignedForm("Park");
-        bob.executeForm(unsignedForm); // Should throw exception because form is not signed
+        bob.executeForm(unsignedForm);
 	} catch (const std::exception& e) {
 		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
