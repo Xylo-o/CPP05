@@ -6,7 +6,7 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:55:15 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/09 20:58:31 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/12/10 18:30:12 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <stdexcept>
 #include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat {
 	public:
@@ -29,7 +29,8 @@ class Bureaucrat {
 		void incrementGrade();
 		void decrementGrade();
 		friend std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);
-		void signForm(Form& form);
+		void signForm(AForm& form);
+		void executeForm(AForm const & form);
 	private:
 		const std::string name;		
 		int grade;	

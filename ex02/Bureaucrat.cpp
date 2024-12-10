@@ -6,22 +6,24 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:55:09 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/09 20:55:11 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/12/10 18:29:09 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "GradeTooHighException.hpp"
-#include "GradeTooLowException.hpp"
+// #include "GradeTooHighException.hpp"
+// #include "GradeTooLowException.hpp"
 #include "Colors.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : name(name), grade(grade){
 	if (grade <= 0) {
-		throw GradeTooHighException();
+		// throw GradeTooHighException();
+		throw std::runtime_error("Grade is too high!");
 	}
 	else if (grade > 150) {
-		throw GradeTooLowException();
+		// throw GradeTooLowException();
+		throw std::runtime_error("Grade is too low!");
 	}
 }
 
@@ -48,7 +50,8 @@ int Bureaucrat::getGrade() const {
 
 void Bureaucrat::incrementGrade() {
     if (grade <= 1) {
-        throw GradeTooHighException();
+		throw std::runtime_error("Grade is too high!");
+        // throw GradeTooHighException();
     }
     grade--;
     std::cout << name << CYAN << "'s grade incremented to " << NC << grade << std::endl;
@@ -56,7 +59,8 @@ void Bureaucrat::incrementGrade() {
 
 void Bureaucrat::decrementGrade() {
     if (grade >= 150) {
-        throw GradeTooLowException();
+        // throw GradeTooLowException();
+		throw std::runtime_error("Grade is too low!");
     }
     grade++;
     std::cout << name << MAGENTA << "'s grade decremented to " << NC << grade << std::endl;
@@ -67,7 +71,7 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat) {
     return os;
 }
 
-void Bureaucrat::signForm(Form& form) {
+void Bureaucrat::signForm(AForm& form) {
 	try {
 		form.beSigned(*this);
 		std::cout << name << GREEN << " signed " << NC << form.getName() << std::endl;
@@ -75,4 +79,13 @@ void Bureaucrat::signForm(Form& form) {
     catch (const std::exception& e) {
         std::cout << name << RED << " couldn't sign " << NC << form.getName() << RED << " because " << NC << e.what() << std::endl;
     }
+}
+
+void Bureaucrat::executeForm(AForm const & form) {
+	try {
+		form.execute(*this);
+		std::cout << name << BLUE << " executed " << NC << form.getName() << std::endl; 
+	} catch (const std::exception& e) {
+		std::cout << name << RED << " couldn't execute the form " << NC << form.getName() << RED << " because " << NC << e.what() << std::endl;
+	}
 }
