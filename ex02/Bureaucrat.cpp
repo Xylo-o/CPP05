@@ -3,26 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:55:09 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/10 18:29:09 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/12/12 12:56:58 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-// #include "GradeTooHighException.hpp"
-// #include "GradeTooLowException.hpp"
 #include "Colors.hpp"
-#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : name(name), grade(grade){
 	if (grade <= 0) {
-		// throw GradeTooHighException();
 		throw std::runtime_error("Grade is too high!");
 	}
 	else if (grade > 150) {
-		// throw GradeTooLowException();
 		throw std::runtime_error("Grade is too low!");
 	}
 }
@@ -51,7 +46,6 @@ int Bureaucrat::getGrade() const {
 void Bureaucrat::incrementGrade() {
     if (grade <= 1) {
 		throw std::runtime_error("Grade is too high!");
-        // throw GradeTooHighException();
     }
     grade--;
     std::cout << name << CYAN << "'s grade incremented to " << NC << grade << std::endl;
@@ -59,7 +53,6 @@ void Bureaucrat::incrementGrade() {
 
 void Bureaucrat::decrementGrade() {
     if (grade >= 150) {
-        // throw GradeTooLowException();
 		throw std::runtime_error("Grade is too low!");
     }
     grade++;

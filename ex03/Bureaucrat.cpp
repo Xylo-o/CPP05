@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:55:09 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/10 20:08:06 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/12/12 12:59:32 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Colors.hpp"
-#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : name(name), grade(grade){
 	if (grade <= 0) {

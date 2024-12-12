@@ -6,15 +6,11 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 20:02:10 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/12 12:32:51 by kali             ###   ########.fr       */
+/*   Updated: 2024/12/12 13:00:04 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "Colors.hpp"
 
 Intern::Intern() {}
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:55:15 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/10 18:30:12 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/12/12 12:59:35 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>
+#include "Colors.hpp"
 #include "AForm.hpp"
 
 class AForm;

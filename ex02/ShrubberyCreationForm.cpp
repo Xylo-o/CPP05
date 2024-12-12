@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:58:50 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/10 18:12:33 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/12/12 12:58:13 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
-#include "Bureaucrat.hpp"
-#include "Colors.hpp"
-#include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target) : AForm("Schrub form", false, 145, 137), target(target) {}
 

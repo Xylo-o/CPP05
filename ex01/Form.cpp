@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 07:49:52 by kali              #+#    #+#             */
-/*   Updated: 2024/12/09 19:00:12 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/12/12 12:54:58 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 #include "Colors.hpp"
 #include "GradeTooHighException.hpp"
 #include "GradeTooLowException.hpp"
-#include "Bureaucrat.hpp"
-#include <iostream>
-#include <string>
-#include <exception>
 
 Form::Form(const std::string& name, bool isSigned, int signGrade, int execGrade) : name(name), isSigned(false), signGrade(signGrade), execGrade(execGrade) {
     if (signGrade <= 0 || execGrade <= 0) {

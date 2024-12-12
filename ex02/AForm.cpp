@@ -3,19 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:57:42 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/10 19:56:11 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/12/12 12:56:00 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 #include "Colors.hpp"
-#include "Bureaucrat.hpp"
-#include <iostream>
-#include <string>
-#include <exception>
 
 AForm::AForm(const std::string& name, bool isSigned, int signGrade, int execGrade) : name(name), isSigned(false), signGrade(signGrade), execGrade(execGrade) {
     if (signGrade <= 0 || execGrade <= 0) {

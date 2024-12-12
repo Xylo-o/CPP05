@@ -6,16 +6,12 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:57:42 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/12 12:39:17 by kali             ###   ########.fr       */
+/*   Updated: 2024/12/12 12:59:13 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
-#include "Colors.hpp"
-#include "Bureaucrat.hpp"
-#include <iostream>
-#include <string>
-#include <exception>
+
 
 AForm::AForm(const std::string& name, bool isSigned, int signGrade, int execGrade) : name(name), isSigned(false), signGrade(signGrade), execGrade(execGrade) {
     if (signGrade <= 0 || execGrade <= 0) {

@@ -6,14 +6,11 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:58:44 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/12 12:36:54 by kali             ###   ########.fr       */
+/*   Updated: 2024/12/12 13:01:45 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
-#include "Bureaucrat.hpp"
-#include "Colors.hpp"
-#include <random>
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target) : AForm("Robotomy form", false, 72, 45), target(target) {}
 

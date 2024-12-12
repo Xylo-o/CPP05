@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:58:38 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/10 18:05:28 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/12/12 12:57:31 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
-#include "Bureaucrat.hpp"
-#include "Colors.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string& target) : AForm("Presi form", false, 25, 5), target(target) {}
 

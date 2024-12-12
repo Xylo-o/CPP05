@@ -6,13 +6,11 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:58:38 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/12 12:36:27 by kali             ###   ########.fr       */
+/*   Updated: 2024/12/12 13:01:01 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
-#include "Bureaucrat.hpp"
-#include "Colors.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string& target) : AForm("Presi form", false, 25, 5), target(target) {}
 

@@ -6,13 +6,11 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:55:22 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/12 12:34:31 by kali             ###   ########.fr       */
+/*   Updated: 2024/12/12 13:00:43 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
 #include "Intern.hpp"
-#include "AForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"

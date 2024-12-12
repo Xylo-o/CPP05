@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 07:49:55 by kali              #+#    #+#             */
-/*   Updated: 2024/12/09 18:03:34 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/12/12 12:54:37 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <string>
 #include <iostream>
+#include <exception>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;

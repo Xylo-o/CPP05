@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:58:40 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/10 19:56:57 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/12/12 13:01:15 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
+#include "Colors.hpp"
 
 class PresidentialPardonForm : public AForm {
 	public:

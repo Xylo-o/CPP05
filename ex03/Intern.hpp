@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Inter.hpp                                          :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 20:01:58 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/10 21:17:01 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/12/12 13:00:12 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <iostream>
 #include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "Colors.hpp"
 
 class AForm;
 
