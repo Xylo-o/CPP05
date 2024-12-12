@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 20:02:10 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/10 21:30:11 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/12/12 12:32:51 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,26 @@ Intern::~Intern() {
 }
 
 AForm *Intern::makeForm(std::string formName, std::string formTarget) {
-	AForm form(formName, false, 0, 0);
-	const std::string formNames[] = {"shrub", "robot", "presi"}
-	
-	
-	return (form);
+	AForm* form = nullptr;
+	const std::string formNames[] = {"shrub", "robot", "presi"};
+	for (int i = 0; i < 3; i++) {
+		if (formName == formNames[i]) {
+			switch (i)
+			{
+			case 0:
+				form = new ShrubberyCreationForm(formTarget);
+				break;
+			case 1:
+				form = new RobotomyRequestForm(formTarget);
+				break;
+			case 2:
+				form = new PresidentialPardonForm(formTarget);
+				break;
+			}
+			std::cout << GREEN << "Intern creates " << NC << formName << std::endl;
+			return form;
+		}
+	}
+	std::cout << RED << "Form name " << NC << formName << RED << " not recognized!" << NC << std::endl; 
+	return (nullptr);
 }

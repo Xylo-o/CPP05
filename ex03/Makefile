@@ -1,4 +1,4 @@
-NAME := form2
+NAME := intern
 CC := c++
 CCFLAGS := -Werror -Wextra -Wall -std=c++98
 
@@ -8,6 +8,7 @@ SRC := main.cpp \
 	PresidentialPardonForm.cpp \
 	RobotomyRequestForm.cpp \
 	ShrubberyCreationForm.cpp \
+	Intern.cpp
 
 OBJ := $(SRC:.cpp=.o)
 

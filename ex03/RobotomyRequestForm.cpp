@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:58:44 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/10 18:05:09 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/12/12 12:36:54 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& o
 	return *this;
 }
 
-RobotomyRequestForm::~RobotomyRequestForm() {
-	std::cout << RED << "Robotomy " << NC << getName() << RED << "has been destroyed!" << NC << std::endl;
-}
+RobotomyRequestForm::~RobotomyRequestForm() {}
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 	if (!getIsSigned()) {
