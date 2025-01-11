@@ -6,7 +6,7 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:58:44 by adprzyby          #+#    #+#             */
-/*   Updated: 2025/01/11 16:35:27 by adprzyby         ###   ########.fr       */
+/*   Updated: 2025/01/11 18:27:42 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& o
 	return *this;
 }
 
-RobotomyRequestForm::~RobotomyRequestForm() {
-	std::cout << RED << "Robotomy " << NC << getName() << RED << "has been destroyed!" << NC << std::endl;
-}
+RobotomyRequestForm::~RobotomyRequestForm() {}
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 	if (!getIsSigned()) {

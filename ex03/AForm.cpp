@@ -6,7 +6,7 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:57:42 by adprzyby          #+#    #+#             */
-/*   Updated: 2025/01/11 18:16:25 by adprzyby         ###   ########.fr       */
+/*   Updated: 2025/01/11 18:22:56 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,7 @@ AForm& AForm::operator=(const AForm& other) {
     return *this;
 }
 
-AForm::~AForm() {
-    std::cout << RED << "The form " << NC << name << RED << " has been destroyed!" << NC << std::endl;
-}
+AForm::~AForm() {}
 
 std::ostream& operator<<(std::ostream& os, const AForm& form) {
     os << form.getName() << BLUE << ", form exec grade " << NC << form.getExecGrade() << BLUE << ", form sign grade " << NC << form.getSignGrade() << BLUE " is signed: " << NC << form.getIsSigned() << std::endl;

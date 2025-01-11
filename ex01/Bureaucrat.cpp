@@ -6,7 +6,7 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 19:41:47 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/09 20:48:23 by adprzyby         ###   ########.fr       */
+/*   Updated: 2025/01/11 18:24:03 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
 	return *this;
 }
 
-Bureaucrat::~Bureaucrat() {
-	std::cout << RED << "The bureaucrat " << NC << name << RED << " has been fired!" << NC << std::endl;
-}
+Bureaucrat::~Bureaucrat() {}
 
 const std::string& Bureaucrat::getName() const {
     return name;

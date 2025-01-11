@@ -6,7 +6,7 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:58:38 by adprzyby          #+#    #+#             */
-/*   Updated: 2025/01/11 16:35:23 by adprzyby         ###   ########.fr       */
+/*   Updated: 2025/01/11 18:26:31 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 	return *this;
 }
 
-PresidentialPardonForm::~PresidentialPardonForm() {
-	std::cout << RED << "Presi " << NC << getName() << RED << "has been destroyed!" << NC << std::endl;
-}
+PresidentialPardonForm::~PresidentialPardonForm() {}
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const {
 	if (!getIsSigned()) {

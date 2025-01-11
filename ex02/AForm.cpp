@@ -6,7 +6,7 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:57:42 by adprzyby          #+#    #+#             */
-/*   Updated: 2025/01/11 18:05:33 by adprzyby         ###   ########.fr       */
+/*   Updated: 2025/01/11 18:25:52 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,7 @@ const std::string& AForm::getName() const {
 
 void AForm::beSigned(const Bureaucrat& bureaucrat) {
     if (bureaucrat.getGrade() > signGrade) {
-        // throw GradeTooLowException();
-		throw std::runtime_error("Grade too low!");
+        throw GradeTooLowException();
     } else {
         isSigned = true;
     }

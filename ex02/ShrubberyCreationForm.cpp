@@ -6,7 +6,7 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:58:50 by adprzyby          #+#    #+#             */
-/*   Updated: 2025/01/11 18:14:44 by adprzyby         ###   ########.fr       */
+/*   Updated: 2025/01/11 18:27:51 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return *this;
 }
 
-ShrubberyCreationForm::~ShrubberyCreationForm() {
-	std::cout << RED << "Shrubbery " << NC << getName() << RED << "has been destroyed!" << NC << std::endl;
-}
+ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	if (!getIsSigned()) {
