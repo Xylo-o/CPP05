@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:58:21 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/12 12:59:17 by kali             ###   ########.fr       */
+/*   Updated: 2025/01/11 16:27:34 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ class AForm {
     AForm(const AForm& other);
     AForm& operator=(const AForm& other);
     virtual ~AForm();
+	
 	const std::string& getName() const;
     bool getIsSigned() const;
 	int getSignGrade() const;
 	int getExecGrade() const;
-	friend std::ostream& operator<<(std::ostream& os, const AForm& form);
     void beSigned(const Bureaucrat& bureaucrat);
 	virtual void execute(Bureaucrat const & executor) const = 0;
   private:
@@ -38,3 +38,4 @@ class AForm {
     const int signGrade;
     const int execGrade;
 };
+std::ostream& operator<<(std::ostream& os, const AForm& form);
