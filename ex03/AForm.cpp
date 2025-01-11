@@ -3,22 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adprzyby <adprzyby@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:57:42 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/12 12:59:13 by adprzyby             ###   ########.fr       */
+/*   Updated: 2025/01/11 18:16:25 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
-
+#include "GradeTooHighException.hpp"
+#include "GradeTooLowException.hpp"
 
 AForm::AForm(const std::string& name, bool isSigned, int signGrade, int execGrade) : name(name), isSigned(false), signGrade(signGrade), execGrade(execGrade) {
     if (signGrade <= 0 || execGrade <= 0) {
-		throw std::runtime_error("Grade too high!");
+		throw GradeTooHighException();
 	}
 	else if (signGrade > 150 || execGrade <= 0) {
-		throw std::runtime_error("Grade too low!");
+		throw GradeTooLowException();
 	}
 	std::cout << GREEN << "New form " << NC << name << GREEN << " created. The sign grade is: " 
     << NC << signGrade << GREEN << " The execution grade is: " << NC << execGrade << std::endl;
@@ -60,7 +61,7 @@ const std::string& AForm::getName() const {
 
 void AForm::beSigned(const Bureaucrat& bureaucrat) {
     if (bureaucrat.getGrade() > signGrade) {
-		throw std::runtime_error("Grade too low!");
+		throw GradeTooLowException();
     } else {
         isSigned = true;
     }

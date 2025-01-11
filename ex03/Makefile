@@ -8,7 +8,9 @@ SRC := main.cpp \
 	PresidentialPardonForm.cpp \
 	RobotomyRequestForm.cpp \
 	ShrubberyCreationForm.cpp \
-	Intern.cpp
+	Intern.cpp \
+	GradeTooHighException.cpp \
+	GradeTooLowException.cpp
 
 OBJ := $(SRC:.cpp=.o)
 

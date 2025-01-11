@@ -8,6 +8,8 @@ SRC := main.cpp \
 	PresidentialPardonForm.cpp \
 	RobotomyRequestForm.cpp \
 	ShrubberyCreationForm.cpp \
+	GradeTooHighException.cpp \
+	GradeTooLowException.cpp
 
 OBJ := $(SRC:.cpp=.o)
 
@@ -26,7 +28,7 @@ clean:
 
 fclean:
 	@echo "$(RED)Cleaning the whole program$(NC)"
-	@rm -rf $(OBJ) $(NAME)
+	@rm -rf $(OBJ) $(NAME) Garden_shrubbery
 
 re: fclean all
 

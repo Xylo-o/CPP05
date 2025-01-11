@@ -6,7 +6,7 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:58:50 by adprzyby          #+#    #+#             */
-/*   Updated: 2025/01/11 16:35:45 by adprzyby         ###   ########.fr       */
+/*   Updated: 2025/01/11 18:14:44 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	if (executor.getGrade() > getExecGrade()) {
 		throw std::runtime_error("Bureaucrat grade too low");
 	}
-	std::ofstream trees(target + "_shubbery");
+	std::ofstream trees(target + "_shrubbery");
 	if (!trees) {
 		throw std::runtime_error("Failed to create the file");
 	}
 
-	trees << "	    oxoxoo    ooxoo\n";
+	trees << "	  oxoxoo    ooxoo\n";
 	trees << "  ooxoxo oo  oxoxooo\n";
 	trees << " oooo xxoxoo ooo ooox\n";
 	trees << " oxo o oxoxo  xoxxoxo\n";

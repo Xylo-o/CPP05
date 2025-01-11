@@ -6,21 +6,21 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:57:42 by adprzyby          #+#    #+#             */
-/*   Updated: 2025/01/11 16:34:58 by adprzyby         ###   ########.fr       */
+/*   Updated: 2025/01/11 18:05:33 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 #include "Colors.hpp"
+#include "GradeTooHighException.hpp"
+#include "GradeTooLowException.hpp"
 
 AForm::AForm(const std::string& name, bool isSigned, int signGrade, int execGrade) : name(name), isSigned(false), signGrade(signGrade), execGrade(execGrade) {
     if (signGrade <= 0 || execGrade <= 0) {
-		// throw GradeTooHighException();
-		throw std::runtime_error("Grade too high!");
+		throw GradeTooHighException();
 	}
 	else if (signGrade > 150 || execGrade <= 0) {
-		// throw GradeTooLowException();
-		throw std::runtime_error("Grade too low!");
+		throw GradeTooLowException();
 	}
 	std::cout << GREEN << "New form " << NC << name << GREEN << " created. The sign grade is: " 
     << NC << signGrade << GREEN << " The execution grade is: " << NC << execGrade << std::endl;
@@ -35,9 +35,7 @@ AForm& AForm::operator=(const AForm& other) {
     return *this;
 }
 
-AForm::~AForm() {
-    std::cout << RED << "The form " << NC << name << RED << " has been destroyed!" << NC << std::endl;
-}
+AForm::~AForm() {}
 
 std::ostream& operator<<(std::ostream& os, const AForm& form) {
     os << form.getName() << BLUE << ", form exec grade " << NC << form.getExecGrade() << BLUE << ", form sign grade " << NC << form.getSignGrade() << BLUE " is signed: " << NC << form.getIsSigned() << std::endl;

@@ -5,7 +5,7 @@ CCFLAGS := -Werror -Wextra -Wall -std=c++98
 SRC := main.cpp \
 	Bureaucrat.cpp \
 	GradeTooLowException.cpp \
-	GradeTooHighException.cpp \
+	GradeTooHighException.cpp
 
 OBJ := $(SRC:.cpp=.o)
 

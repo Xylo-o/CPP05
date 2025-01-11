@@ -6,19 +6,21 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:55:09 by adprzyby          #+#    #+#             */
-/*   Updated: 2025/01/11 16:35:01 by adprzyby         ###   ########.fr       */
+/*   Updated: 2025/01/11 18:06:45 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Colors.hpp"
+#include "GradeTooHighException.hpp"
+#include "GradeTooLowException.hpp"
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : name(name), grade(grade){
 	if (grade <= 0) {
-		throw std::runtime_error("Grade is too high!");
+		throw GradeTooHighException();
 	}
 	else if (grade > 150) {
-		throw std::runtime_error("Grade is too low!");
+		throw GradeTooLowException();
 	}
 }
 
@@ -45,7 +47,7 @@ int Bureaucrat::getGrade() const {
 
 void Bureaucrat::incrementGrade() {
     if (grade <= 1) {
-		throw std::runtime_error("Grade is too high!");
+		throw GradeTooHighException();
     }
     grade--;
     std::cout << name << CYAN << "'s grade incremented to " << NC << grade << std::endl;
@@ -53,7 +55,7 @@ void Bureaucrat::incrementGrade() {
 
 void Bureaucrat::decrementGrade() {
     if (grade >= 150) {
-		throw std::runtime_error("Grade is too low!");
+		throw GradeTooLowException();
     }
     grade++;
     std::cout << name << MAGENTA << "'s grade decremented to " << NC << grade << std::endl;

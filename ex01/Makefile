@@ -6,7 +6,7 @@ SRC := main.cpp \
 	Bureaucrat.cpp \
 	GradeTooLowException.cpp \
 	GradeTooHighException.cpp \
-	Form.cpp \
+	Form.cpp
 
 OBJ := $(SRC:.cpp=.o)
 
